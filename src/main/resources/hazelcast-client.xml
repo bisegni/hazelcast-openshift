@@ -15,28 +15,23 @@
   ~ limitations under the License.
   -->
 
-<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.6.xsd"
-           xmlns="http://www.hazelcast.com/schema/config"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<hazelcast-client xsi:schemaLocation="http://www.hazelcast.com/schema/client-config hazelcast-client-config-3.6.xsd"
+                  xmlns="http://www.hazelcast.com/schema/client-config"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <properties>
     <property name="hazelcast.discovery.enabled">true</property>
   </properties>
 
   <network>
-    <join>
-      <multicast enabled="false"/>
-      <tcp-ip enabled="false" />
-
-      <discovery-strategies>
-        <discovery-strategy enabled="true" class="com.noctarius.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
-          <properties>
-            <property name="service-name">hazelcast-openshift</property>
-            <property name="namespace">default</property>
-          </properties>
-        </discovery-strategy>
-      </discovery-strategies>
-    </join>
+    <discovery-strategies>
+      <discovery-strategy enabled="true" class="com.noctarius.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
+        <properties>
+          <property name="service-name">hazelcast-openshift</property>
+          <property name="namespace">default</property>
+        </properties>
+      </discovery-strategy>
+    </discovery-strategies>
   </network>
 
-</hazelcast>
+</hazelcast-client>

@@ -11,14 +11,14 @@
   <dependencies>
     <dependency>
       <groupId>com.hazelcast</groupId>
-      <artifactId>hazelcast</artifactId>
-      <version>3.6-EA</version>
+      <artifactId>hazelcast-all</artifactId>
+      <version>3.6-EA2</version>
     </dependency>
 
     <dependency>
-      <groupId>com.noctarius.hazelcast</groupId>
+      <groupId>com.noctarius.discovery</groupId>
       <artifactId>hazelcast-kubernetes-discovery</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>0.9.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
